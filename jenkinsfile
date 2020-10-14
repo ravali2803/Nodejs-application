@@ -1,12 +1,16 @@
-pipeline{
-agent any    
+node{    
 stages {
   stage('checkout scm') { 
+  steps{
    checkout([$class: 'GitSCM', doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/rxa80330/Nodejs-application.git']]])
   }
+  }
+  
      stage('Build Project') {
+      steps{
               bat ''' 'npm install'
-                  'npm run build' '''
+                      'npm run build' '''
+                 } 
             }
 }
 }
