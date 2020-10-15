@@ -4,14 +4,14 @@ tools {nodejs "node"}
 stages {
   stage('checkout scm') { 
   steps{
-    git credentialsId: 'githubcred', url: 'https://github.com/rxa80330/Nodejs-application.git'
+   bat git credentialsId: 'githubcred', url: 'https://github.com/rxa80330/Nodejs-application.git'
   }
   }
   
      stage('Build Project') {
       steps{
-              bat ''' 'npm install'
-                      'npm run build' '''
+              bat'npm install'
+               bat 'npm run build'
                  } 
             }
 }
