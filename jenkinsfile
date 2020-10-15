@@ -4,7 +4,7 @@ tools {nodejs "node"}
 stages {
   stage('checkout scm') { 
   steps{
-    git 'https://github.com/rxa80330/Nodejs-application.git'
+    git "https://github.com/rxa80330/Nodejs-application.git"
   }
   }
   
